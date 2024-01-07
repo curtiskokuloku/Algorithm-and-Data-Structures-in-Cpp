@@ -1,0 +1,348 @@
+                Data structures
+
+- It is a way to organize data (usually into memory)
+- After organizing the data, it becomes easy to process it
+- There are two types of data structures: linear and non-linear
+    - Linear data structures are very easy to implement because the data they contain exist
+      sequentially in memory, e.g., Array, Linked List, Stack, and Queue.
+    - In non-linear data structures, the data are not in sequence (they are connected through different
+      parts), e.g., Tree, Graph.
+
+                Algorithms
+
+- It is a set of instructions to perform a task or to solve a given problem
+- Let say we want to write an algorithm to print the average of 3 given numbers. The steps would be:
+    1. Perform sum of 3 numbers
+    2. Store it in a variable 'sum'
+    3. Divide the sum by 3
+    4. Store the value in variable 'avg'
+    5. print the value stored in 'avg'
+
+                Analysis of Algorithms
+
+- Analysis of algorithms deals in finding best algorithm which runs fast and takes in less memory
+- When analysing an algorithm, we check the Time complexity and Space complexity of the algorithm
+
+                Time complexity
+
+- The amount of time taken by algorithm to run
+- The input processed by an algorithm helps in determining the time complexity
+
+                Space complexity
+
+- The amount of memory or space taken by algorithm to run
+- Tne memory required to process the input by an algorithm helps in determining the space complexity
+
+                Asymptotic Analysis of an Algorithm
+
+- It helps iin evaluating performance of an algorithm in terms of input size and its increase
+- Using asymptotic analysis, we don't actually measure actual running time of algorithm
+- Helps in determining how much time and pace taken by algorithm increases with input size
+
+                Asymptotic Notations
+
+- The mathematical tools used to describe the running time of an algorithm in terms of input size
+- Example: Performance of a car in 1 litre of petrol
+            Highway (min traffic) :- 25 km/litre
+            City (max traffic) :- 15 km/litre
+            City + Highway (avg traffic) :- 20 km/litre
+- Helps us in determining the Best Case, Average Case, and Worst Case
+
+                Types of Asymptotic Notations
+
+- There are three notations for performing runtime analysis of an algorithm
+    1. Omega (Ω) Notation
+    2. Big O (O) Notation
+    3. Theta (𝛩) Notation
+- Omega notation expresses the lower bound of an algorithm's running time
+    - Lower bound means for any given input, this notation determines best/minimum amount of time
+      an algorithm can take to complete
+- Big O notation expresses the upper bound of an algorithm's running time
+    - Upper bound means for any given input, this notation determines longest/maximum amount of time
+      an algorithm can take to complete
+- Theta notation expresses both the upper and lower bound of an algorithm's running time
+    - Means that for any given input, this notation determines average amount of time an algorithm
+      can take to complete
+
+                Big O notation
+
+- The most common notation used to analyze algorithm
+- Rules of Big O notation:
+    1. It's a Single Processor
+    2. It performs Sequential Execution of statements
+    3. Assignment operation takes 1 unit of time, i.e., x = 1
+    4. Return statement takes in 1 unit of time, i.e., return x
+    5. Arithmetic operations take in 1 unit of time, i.e., x + y
+    6. Logical operations take in 1 unit of time, i.e., x && y
+    7. Other small/single operations take 1 unit of time
+    8. Drop lower order terms, i.e., T(n) = n^2 + 3n + 1 ==> O(n^2)
+    9. Drop constant multipliers, i.e., T(n) = 3n^2 + 6n + 1 ==> O(n^2)
+
+                Array Data Structure
+
+- It is like a box where all the elements in the box holding partitions are adjacent or contiguous
+    - All the elements in the box are of the same specific type
+    - Each partition has two neighbors except first and last one
+    - The size of the box is fixed and cannot be modified
+    - Each partition is indexed and can be determined by its position
+    - Index starts at 0, and for one dimensional array, ends at length -1
+- Declaration:
+    - One dimensional array can be declared via:
+      dataType arrayName[]; OR dataType[] arrayName;
+- Initialization:
+    - It gives memory to array elements, and for one dimensional array it can be initialized via:
+      arrayName = new dataType[size];
+- Additionally, we can declare and initialize the array in the same line via:
+      dataType[] arrayName = new dataType[size];
+      dataType[] arrayName = {...};
+- We can update the elements in the array via:
+      arrayName[index] = newElement;
+- If you try to perform operation at an index that is not in the array, you will get an error
+
+                Singly Linked List
+
+- It is a data structure used for storing collection of nodes and has the following properties:
+    - It contains sequence of nodes
+    - A node has data and reference to next node
+    - First node is the head node, and last node has data and points to null
+
+                Doubly linked list
+
+- It is called "two way" linked list.
+- Given a node, we can navigate the list in both forward and backward direction, which is not
+  possible in Singly Linked List.
+- A node in Singly Linked List can only be deleted if we have a pointer to its previous node.
+- However, in Doubly Linked List we can delete the node even if we do not have a pointer to
+  its previous node.
+- It is represented as:
+    previous <-- data --> next
+
+                Stack
+- It is a linear data structure used for storing data in an ordered list in which insertion and
+  deletion are done at one end, known as the "top".
+- The last element inserted is the first one to be deleted. Hence, it is called a "Last In First Out"
+  (LIFO) list.
+- We can implement a stack using a Linked List or an Array.
+    top --> null
+
+                Queue
+- It is a linear data structure used for storing data in an ordered list in which insertion are
+  done at one end, called as "rear" and deletion are done at the other end, called as "front".
+- The first element inserted is the first one to be deleted. Hence, it is called as "First In First Out"
+  (FIFO) list.
+- We can also implement a queue using a Linked List or an Array.
+    front --> rear --> null
+
+                Binary Tree
+- A tree is a non-linear data structure made up of nodes and edges without having any cycle.
+- Each node in a tree can point to a number of nodes in a tree.
+- It is a way of representing hierarchical structure with a parent node called as root and many levels
+  of additional nodes.
+- A tree is called a Binary Tree if each node has zero, one or two children (left and right)
+    null <-- left <-- data --> right --> null
+
+                Pre order Binary Tree Traversal
+- In this traversal, we visit the root node first, then traverse the left subtree and then the right subtree.
+
+                In order Binary Tree Traversal
+- In this traversal, we visit the left subtree first, then the root node, and finally the right subtree.
+
+                Post order Binary Tree Traversal
+- In this traversal, we visit the left subtree first, then the right subtree node, and finally the root node.
+
+                Level order Binary Tree Traversal
+- In this traversal, we always traverse based on the level of the tree by first visiting the nodes
+  corresponding to level 0, and then level 1, and so on.
+
+                Binary Search Tree (BST)
+- It is a type of Binary Tree in which data is organized in an ordered manner which helps in faster
+  search and insertion of data.
+- It satisfies the following properties:
+    - The left subtree of a node contains only nodes with values lesser than the node's value.
+    - The right subtree of a node contains only nodes with values greater than the node's value.
+    - The left and right subtree each much also be a BST.
+- Binary search has a time complexity of O(log n), where 'n' is the number of elements in the sorted array.
+
+                Priority Queue
+- It is a data structure that allows us to find min/max element among a collection of elements in
+  constant time.
+- It supports the following operations:
+    - insert(key): insert a key into the priority queue
+    - deleteMin()/deleteMax(): remove and return largest/smallest key
+    - getMax()/getMin(): return largest/smallest key
+
+                Binary Heap
+- It is a data structure that helps us in implementing Priority Queue operations efficiently.
+- It is a complete binary tree in which each node value is >= (or <=) then the value of its children.
+    - In a Min heap, the root node of a tree is the minimum value in the tree.
+    - In a Max heap, the root node is the maximum value in the tree.
+    - Every subtree in the binary heap much follow these properties.
+- A complete binary tree is a binary tree where all levels are completely filled except last level.
+    - The last level has nodes in such a way that left side is never empty.
+
+                Representation of a Binary Heap
+- Binary Heaps usually are implemented using arrays.
+    - The first entry of array is taken as empty.
+- As Binary Heaps are complete binary tree, teh values are stored in array by traversing tree level
+  by level from left to right (level-order traversal).
+- Children of kth index = 2k, 2k+1
+- Parent of kth index = k/2
+
+                Max Binary Heap
+- It is a complete binary tree in which each node value >= than the values of its children
+- The maximum value is at the top which is root of complete binary tree.
+    - Fot its array representation, its at index 1, i.e., heap[1].
+
+                Bottom-up Reheapify (swim) in Max Heap
+- After inserting an element into heap, it may not satisfy the heap property. Thus, we perform
+  bottom-up reheapify technique, in which we adjust the locations of elements to satisfy heap property.
+
+                Top-down Reheapify (sink) in Max Heap
+- After deleting an element from heap, it may not satisfy the heap properties. Thus, we perform
+  top-down reheapify technique, in which we adjust the locations of elements to satisfy heap property.
+
+                Bubble Sort
+- Also called Sinking Sort, while applying this sorting algorithm on unsorted array, the largest element
+  tends to sink at the end of the array.
+- It repeatedly compares pair of adjacent elements and swap them if they are in wrong order.
+- Bubble Sort has a worst-case time complexity of O(n^2), which makes them inefficient for large arrays.
+- In general, they are best suited for small input sizes or situations where the array is already partially sorted.
+    - In this case, the runtime of O(n).
+
+                Insertion Sort
+- It is a simple sorting algorithm that works the way we sort playing cards in out hands.
+- We divide the given array into two parts - sorted and unsorted.
+- From unsorted part, we take first element and place at its correct position in sorted array.
+    - This is done by shifting all the elements which are larger than the first element by one position.
+- Insertion Sort has a worst-case time complexity of O(n^2), which makes them inefficient for large arrays.
+- In general, they are best suited for small input sizes or situations where the array is already partially sorted.
+    - In this case, the runtime of O(n).
+
+                Selection Sort
+- In this sorting algorithm we divide the given array into two parts - sorted and unsorted part.
+- The algorithm sorts an array by repeatedly finding the minimum in an unsorted array and making it
+  part of the sorted array.
+- From unsorted part, we pick minimum element and swap it with left most element of unsorted part.
+    - After swap, that element now becomes part of sorted array.
+- Selection Sort has a worst-case and best-case time complexity of O(n^2).
+    - The worst-case occurs when the input array is sorted in reverse order, and the algorithm needs
+      to make the maximum number of comparisons.
+    - In the best-case, the algorithm must scan the entire array to find the minimum element in each
+      pass, regardless of the initial order.
+
+                Merge Sort
+- It is a DIVIDE and CONQUER algorithm that recursively "breaks down a problem into two or more sub-problems
+  of the same related type, until these become simple enough to be solved directly. The solutions to the
+  sub-problems are then combined to give a solution to the original problem".
+- DIVIDE: In this step, the algorithm takes middle point of array and divides the array into two halves.
+  The algorithm is carried out recursively for half arrays, until there are no more half arrays to divide.
+- CONQUER: In this step, starting from the bottom, we sort adn merge the divided arrays and get the sorted
+  array.
+- The runtime of Merge Sort is O(n log n), where "n" is the number of elements in the input array.
+- It's worth noting that Merge Sort is stable (i.e., it maintains the relative order of equal elements)
+  and can be used for sorting various types of data, including primitive types and complex objects.
+
+                Quick Sort
+- It is a DIVIDE and CONQUER algorithm that involves 3 steps:
+    - Pivot Selection: Pick an element and mark it as pivot, which can be first, last or any random element.
+    - Partitioning: Reorder the array such that all elements greater than pivot comes after the pivot,
+      and all elements smaller than pivot comes before the pivot. The elements equal to pivot can go either
+      side of the pivot. After this partitioning, the pivot is at its correct sorted position.
+    - Recursion: Recursively apply the above steps on the subarray formed to the left side and the subarray
+      formed on the right side of the pivot.
+- The runtime of Quicksort, on average, is O(n log n), where "n" is the number of elements in the input array.
+- However, the worst-case scenario, where the pivot selection consistently results in one subarray significantly
+  larger than the other, the runtime can degrade to O(n^2).
+
+
+                Graphs
+- A Graph is a non-linear data structure used for storing data; contains a set of vertices ad a collection
+  of edges that connects a pair of vertices.
+- For example, consider the graph containing a set of vertices {1, 2, 3, 4, 5} and a set of edges {(1, 2),
+  (1, 3), (1, 4), ..., (4, 5)}.
+- Social Networking Graphs: Graphs help us implement Social Networking sites such as Facebook, twitter, etc.
+    - For example, names of people represent vertices in the graph, and friendship between two people can
+      be represented as an Edge in the graph.
+- Web content: Graphs help us organize Web content over the Internet.
+    - For example, Webpages such as google.com, udemy.com, etc represent vertices in the graph, and
+      a link between two webpages can be represented as an Edge in the graph.
+
+                Undirected Graphs
+- In this case, the relationship (edge) between a pair of vertices is associated, such that, an edge
+  (i, j) is the same as the edge (j, i) where i != j.
+    - Social Networking Graph is an undirected graph: if John is friend to Max, then Max is also friend
+      to John.
+
+                Adjacency Matrix Representation (Undirected Graph)
+- It is a way of representing a graph as a matrix of booleans (0's and 1's).
+- The adjacency matrix of an undirected graph is symmetric, where the value in the ith row and jth column
+  is identical with the value in the jth row and ith column (matrix[i][j] == matrix[j][i])
+
+                Adjacency List Representation (Undirected Graph)
+- It is a way of representing a graph using a list-based approach, where each vertex (node) is associated
+  with a list that contains its neighboring vertices.
+    - If vertex u is connected to vertex v, then v is also connected to u, so the adjacency list for vertex
+      u will contain v, and the adjacency list for v will contain u.
+- In adjacency list representation, we use an array of lists to represent the vertices and their corresponding
+  adjacency lists.
+
+                Traversal of Graphs
+- Breadth-First Search (BFS): An algorithm that explores the graph level by level, starting from a given
+  source vertex.
+    - It visits all the vertices at the current level before moving on to the vertices at the next level.
+    - This algorithm uses a queue to store vertices to be visited.
+- Depth-First Search (DFS): An algorithm that explores the graph by following a path from the source
+  vertex as far as possible before backtracking.
+    - It visits all the vertices along the current path before exploring other paths.
+    - - This algorithm uses a stack to store vertices to be visited.
+
+                Dynamic Programming
+- It is a technique in which a complex problem is solved by:
+    - Breaking it into smaller sub-problems.
+    - Solving those sub-problems and simply storing their results.
+    - Re-use those stored results if sub-problems occur/overlaps again. (Avoid solving sub-problems again)
+    - Finally using solutions to smaller problems, build up a solution to complex problem.
+- It is mainly an optimization over recursion; Recursion + Memoization = Dynamic Programming
+- A given problem has Optimal Substructure Property if optimal solution of the given problem can be
+  obtained by using the optimal solution to its sub-problems.
+- A given problem has Overlapping Sub-Problems property if solution of the given problem is obtained by
+  solving same sub-problems multiple times.
+
+                Bottom Up Approach
+- We try to solve smaller sub-problems first, use their solution to build on and arrive at solutions to
+  bigger sub-problems.
+- It is also called as Tabulation method: the solution is build in a tabular form by using solutions of
+  sub-problems iteratively and generating solutions to bigger sub-problems.
+
+                Top Down Approach
+- It is also called as Memoization, where we break the large problem into multiple sub-problems, and
+  each of the sub-problems are solved and solutions are remembered.
+    - If the sub-problem is solved already, reuse the answer, otherwise solve the sub-problem and store
+      the result.
+    - Thus, it memorizes the solution of the sub-problem to avoid recomputing the value if sub-problem is
+      encountered again.
+
+                Hashing
+- Arrays can be used to provide O(1) searches using indexes.
+- Hashing is a technique used for storing, retrieving and removing information as quick as possible.
+- It is a process of converting an arbitrary size key into fixed sized value.
+    - The conversion is done via special function called a Hash Function.
+- The operations supported by hashing such as storing, retrieving and removing information have average
+    runtime complexity of O(1).
+- A Hash Function simply takes an arbitrary size key and provides fixed size value also called as index.
+- A Modular Hash Function simply takes a key and size, returns remainder by dividing key by size.
+    - The remainder is used as an index to store the key in an array of provided size.
+
+                Hash Table
+- It is a generalized form of an array which stores the day in form of key-value pair.
+- It converts key to an index using hash function and then store the index as key-value in array.
+- The primary operations supported by HashTable are:
+    - put(key, value) - adds key-value pair against unique key.
+    -  get(key) - gets value for the provided key.
+    - rewove(key) - removes the key-value pair from HashTable
+- Average runtime if of O(1).
+- Java Collections Framework has HashMap class - if we want to deal with key-value pair and HashSet
+  class if we want to deal with only keys.
+- Collisions may happen where two or more keys generate the same hash value (index) sometimes.
+- We can use various techniques to resolve the collision such as Separate Chaining which combines a
+  linked list with a hash table. The runtime of this approach is O(n).
